@@ -5,6 +5,8 @@
  */
 package model;
 
+import model.doors.Door;
+
 /**
  *
  * @author Андрей
@@ -12,6 +14,8 @@ package model;
 public class Body {
     
     private float Weight; //Вес машины
-    private boolean doors[] = new boolean[4]; 
+    private Door doors[] = new Door[4]; 
+    
+    //private Door d = new Door();
     
 }

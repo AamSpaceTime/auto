@@ -12,9 +12,11 @@ package model.doors;
 public class Door {
     
     private boolean open;
+    protected final Glass glass;
     
     Door() {
         open = false;
+        glass = new Glass(Glass.TypeList.FrontLeftDoor.toString());
     }
     
     Door(boolean oc) {
@@ -23,6 +25,7 @@ public class Door {
         } else {
             closeDoor();
         }
+        glass = new Glass(Glass.TypeList.FrontLeftDoor.toString());
     }
     
     public void openDoor() {
@@ -31,6 +34,10 @@ public class Door {
     
     public void closeDoor() {
         open = false;
-    }    
+    } 
+ 
+    public final Glass getGlass() {
+        return glass;        
+    } 
     
 }
