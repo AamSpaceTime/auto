@@ -5,29 +5,32 @@
  */
 package model.doors;
 
+import model.doors.Dictionaries.DoorTypes;
+
 /**
  *
  * @author Андрей
  */
 public class Glass {
     
-    public static enum TypeList {
-            FrontLeftDoor,
-            FrontRightDoor,
-            BackLeftDoor,
-            BackRightDoor
-    };
+    public DoorTypes Type; //Тип стекла
+    private boolean open; //Признак открытого/закрытого стекла
     
-    public String Type;
-    
-    Glass(String temp) {
-        Type = temp;
+    public Glass(DoorTypes Type) {
+        this.Type = Type;
+        this.open = false;
     }
     
+    public void open() {
+        open = true;
+    }
     
+    public void close() {
+        open = false;
+    }
     
-    public void setType(String temp) {
-        Type = temp;
+    public boolean checkOpen() {
+        return open;
     }
     
 }

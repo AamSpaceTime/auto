@@ -5,7 +5,9 @@
  */
 package model;
 
+import java.util.HashMap;
 import model.doors.Door;
+import model.doors.Dictionaries.DoorTypes; 
 
 /**
  *
@@ -14,7 +16,23 @@ import model.doors.Door;
 public class Body {
     
     private float Weight; //Вес машины
-    private Door doors[] = new Door[4]; 
+
+    /**
+     *
+     */
+    private static HashMap <DoorTypes, Door> doors; //Двери
+    
+    Body() {
+        //Создаем (вешаем) двери в автомобиль
+        doors = new HashMap();
+        for(DoorTypes temp: DoorTypes.values()) {
+            doors.put(temp, new Door(temp));
+        }
+    }
+    
+    public HashMap getDoors() {
+        return doors;
+    }
     
     //private Door d = new Door();
     

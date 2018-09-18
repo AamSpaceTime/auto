@@ -8,9 +8,15 @@ package model.doors;
 /**
  *
  * @author Андрей
+ * Справочники дверей
  */
-public class FrontLeftDoor extends Door {
+public class Dictionaries {
     
-    protected final String glass = "Левое переднее стекло";
-    
+    //Типы дверей
+    public static enum DoorTypes {
+        FrontLeftDoor,
+        FrontRightDoor,
+        BackLeftDoor,
+        BackRightDoor
+    };
 }
