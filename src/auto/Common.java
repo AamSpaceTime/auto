@@ -5,28 +5,42 @@
  */
 package auto;
 
+import controller.Main;
+import java.util.Scanner;
+import model.Body;
+import model.doors.Dictionaries;
+import view.Menu;
+
 /**
  *
  * @author Андрей
  */
 public class Common {
+    
+    public static Body model;
+    public static Main controller;
+    public static Menu view;
+    
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
         /*
             1. Инициализируем модель
-            2. Инициализируем контроллер и передаем туда модель
-            3. Выполняем методы контроллера для сценария "Подготовка к движению":
-                Открыть дверь водителя
-                Посадить водителя
-                Вставить ключ зажигания
-                Завести двигатель
-                Пристегнуться
-            4. Выполняем методы контроллера для сценария "Поехали" ...
+            2. Инициируем представление
+            3. Инициализируем контроллер и передаем туда модель и представление
+            4. Запускаем бесконечный цикл в котором просматриваем результат меню на выход
         */
+        model = new Body();
+        view = new Menu();
+        controller = new Main(model, view);
+        boolean run = true;        
+        
+        while(run) {            
+            run = controller.swichMenu();
+        }        
     }
     
 }
