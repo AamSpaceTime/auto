@@ -29,6 +29,7 @@ public class Body {
         for(DoorTypes temp: DoorTypes.values()) {
             doors.put(temp, new Door(temp));
         }
+        //"Выключаем" лампочку открытых дверей по умолчанию
         openDoorLamp = false;
     }
     

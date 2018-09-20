@@ -22,32 +22,56 @@ public class Door {
         2. Имеют связи (методы для взаимодействия) с другими деталями, которые 
     */
     
+    /**
+     * 
+     * @param Type 
+     */
     public Door(DoorTypes Type) {
         open = false;
         glass = new Glass(Type);
         this.Type = Type;
     }
     
+    /**
+     * Открыть окно
+     */
     public void open() {
         open = true;
     }
     
+    /**
+     * Закрыть окно
+     */
     public void close() {
         open = false;
-    } 
- 
+    }
+    
+    /**
+     * Проверка открытой двери
+     * @return 
+     */
     public boolean checkOpen() {
         return open;
     }
-
+    
+    /**
+     * Открыть окно
+     */
     public void openGlass() {
         glass.open();
     }
     
+    /**
+     * Закрыть окно
+     */
     public void closeGlass() {
         glass.close();
-    } 
- 
+    }
+    
+    /**
+     * Проверка окна
+     * @return 
+     */
     public boolean checkOpenGlass() {
         return glass.checkOpen();
     }

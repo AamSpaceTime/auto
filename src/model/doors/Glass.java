@@ -16,19 +16,33 @@ public class Glass {
     public DoorTypes Type; //Тип стекла
     private boolean open; //Признак открытого/закрытого стекла
     
+    /**
+     * 
+     * @param Type 
+     */
     public Glass(DoorTypes Type) {
         this.Type = Type;
         this.open = false;
     }
     
+    /**
+     * Открываем окно
+     */
     public void open() {
         open = true;
     }
     
+    /**
+     * Закрываем окно
+     */
     public void close() {
         open = false;
     }
     
+    /**
+     * Возвращаем открыто или закрыто окно
+     * @return 
+     */
     public boolean checkOpen() {
         return open;
     }
