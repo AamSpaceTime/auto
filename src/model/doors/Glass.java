@@ -47,5 +47,15 @@ public class Glass extends Detal {
     public boolean checkOpen() {
         return open;
     }
+
+    @Override
+    public boolean checkReady() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean autotest() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
