@@ -5,13 +5,14 @@
  */
 package model.doors;
 
+import model.Detal;
 import model.doors.Dictionaries.DoorTypes;
 
 /**
  *
  * @author Андрей
  */
-public class Door {
+public class Door extends Detal {
     
     private boolean open; //Признак открытой/закрытой двери
     protected final Glass glass; //Деталь двери - стекло
