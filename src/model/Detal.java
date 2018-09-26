@@ -80,4 +80,5 @@ public abstract class Detal {
      */
     public abstract boolean autotest();
     
+    
 }
