@@ -6,6 +6,7 @@
 package model;
 
 import java.util.HashMap;
+import model.doors.Dictionaries;
 import model.doors.Door;
 import model.doors.Dictionaries.DoorTypes; 
 
@@ -27,7 +28,9 @@ public class Body {
         //Создаем (вешаем) двери в автомобиль
         doors = new HashMap();
         for(DoorTypes temp: DoorTypes.values()) {
-            doors.put(temp, new Door(temp));
+            Door d = new Door(temp, Dictionaries.DetalCodes.get("Door_"+temp.toString()));
+            d.setGlass(temp, Dictionaries.DetalCodes.get("Glass_"+temp.toString()));
+            doors.put(temp, d);            
         }
         //"Выключаем" лампочку открытых дверей по умолчанию
         openDoorLamp = false;

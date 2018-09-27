@@ -15,7 +15,7 @@ import model.doors.Dictionaries.DoorTypes;
 public class Door extends Detal {
     
     private boolean open; //Признак открытой/закрытой двери
-    protected final Glass glass; //Деталь двери - стекло
+    protected Glass glass; //Деталь двери - стекло
     public DoorTypes Type; //Тип двери
     /*
         Имеет смысл добавлять только те детали, которые:
@@ -27,21 +27,22 @@ public class Door extends Detal {
      * 
      * @param Type 
      */
-    public Door(DoorTypes Type) {
+    public Door(DoorTypes Type, Long num) {
         open = false;
-        glass = new Glass(Type);
         this.Type = Type;
-    }
+        this.setNumber(num);
+    }    
+    
     
     /**
-     * Открыть окно
+     * Открыть дверь
      */
     public void open() {
         open = true;
     }
     
     /**
-     * Закрыть окно
+     * Закрыть дверь
      */
     public void close() {
         open = false;
@@ -53,6 +54,14 @@ public class Door extends Detal {
      */
     public boolean checkOpen() {
         return open;
+    }
+    
+    
+    /**
+     * Добавить окно
+     */
+    public void setGlass(DoorTypes Type, Long num) {
+        glass = new Glass(Type, num);
     }
     
     /**

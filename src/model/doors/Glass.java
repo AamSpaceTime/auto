@@ -21,9 +21,10 @@ public class Glass extends Detal {
      * 
      * @param Type 
      */
-    public Glass(DoorTypes Type) {
+    public Glass(DoorTypes Type, Long num) {
         this.Type = Type;
         this.open = false;
+        this.setNumber(num);
     }
     
     /**

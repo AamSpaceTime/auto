@@ -16,17 +16,17 @@ public abstract class Detal {
     /**
      * number - Номер детали в реестре производителя
      */
-    private Integer number;
+    private Long number;
     /**
      * Links содержит связи (объекта) данной детали с другими (объектами) деталяим
      */
-    private HashMap <Integer, Detal> Links;
+    private HashMap <Long, Detal> Links;
     
     /**
      * Получаем номер данной детали
      * @return 
      */
-    public Integer getNumber() {
+    public Long getNumber() {
         return number;
     }
     
@@ -34,7 +34,7 @@ public abstract class Detal {
      * Устанавливаем номер данной детали
      * @param num 
      */
-    public void setNumber(Integer num) {
+    public void setNumber(Long num) {
         this.number = num;
     }
     
@@ -60,7 +60,7 @@ public abstract class Detal {
      * @param num
      * @return 
      */
-    public boolean removeLinkDetail(Integer num) {
+    public boolean removeLinkDetail(Long num) {
         if( Links.remove(num) == null ) {
             return false;
         } else {
