@@ -5,7 +5,11 @@
  */
 package view;
 
+import java.util.HashMap;
 import model.Body;
+import model.doors.Dictionaries;
+import model.doors.Dictionaries.DoorTypes;
+import model.doors.Door;
 
 /**
  *
@@ -37,11 +41,20 @@ public class ShowModelParams {
         System.out.println("Вес: "+model.getWeight());
     }
     
+    private void showDoors() {
+        HashMap <Dictionaries.DoorTypes, Door> d = model.getDoors();
+        for(Door temp: d.values()) {
+            System.out.println("Код двери: "+temp.getNumber());
+        }
+    }
+    
+    
     public void showModelParams() {
         System.out.println("\nСостояние модели:");
         System.out.println("#########################");
         showWeight();
-        showDoorLamp();        
+        showDoorLamp();
+        showDoors();
         System.out.println("#########################");
     }
     

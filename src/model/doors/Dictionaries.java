@@ -35,21 +35,21 @@ public class Dictionaries {
          */
        
         //Коды дверей
-        LoadCodes.put("Door", 10-01-18-01-00-00-00L);
-        LoadCodes.put("Door_"+DoorTypes.FrontLeftDoor.toString(), 10-01-18-01-00-00-01L);
-        LoadCodes.put("Door_"+DoorTypes.FrontRightDoor.toString(), 10-01-18-01-00-00-02L);
-        LoadCodes.put("Door_"+DoorTypes.BackLeftDoor.toString(), 10-01-18-01-00-00-03L);
-        LoadCodes.put("Door_"+DoorTypes.BackRightDoor.toString(), 10-01-18-01-00-00-04L);
+        LoadCodes.put("Door", 10_01_18_01_00_00_00L);
+        LoadCodes.put("Door_"+DoorTypes.FrontLeftDoor.toString(), 10_01_18_01_00_00_01L);
+        LoadCodes.put("Door_"+DoorTypes.FrontRightDoor.toString(), 10_01_18_01_00_00_02L);
+        LoadCodes.put("Door_"+DoorTypes.BackLeftDoor.toString(), 10_01_18_01_00_00_03L);
+        LoadCodes.put("Door_"+DoorTypes.BackRightDoor.toString(), 10_01_18_01_00_00_04L);
         
         //Коды стекол дверей        
-        LoadCodes.put("Glass", 10-01-18-01-01-00-00L);
-        LoadCodes.put("Glass_"+DoorTypes.FrontLeftDoor.toString(), 10-01-18-01-01-00-01L);
-        LoadCodes.put("Glass_"+DoorTypes.FrontRightDoor.toString(), 10-01-18-01-01-00-02L);
-        LoadCodes.put("Glass_"+DoorTypes.BackLeftDoor.toString(), 10-01-18-01-01-00-03L);
-        LoadCodes.put("Glass_"+DoorTypes.BackRightDoor.toString(), 10-01-18-01-01-00-04L);
+        LoadCodes.put("Glass", 10_01_18_01_01_00_00L);
+        LoadCodes.put("Glass_"+DoorTypes.FrontLeftDoor.toString(), 10_01_18_01_01_00_01L);
+        LoadCodes.put("Glass_"+DoorTypes.FrontRightDoor.toString(), 10_01_18_01_01_00_02L);
+        LoadCodes.put("Glass_"+DoorTypes.BackLeftDoor.toString(), 10_01_18_01_01_00_03L);
+        LoadCodes.put("Glass_"+DoorTypes.BackRightDoor.toString(), 10_01_18_01_01_00_04L);
         
-        //Код мотор-редуктора стеклоподъемника
-        LoadCodes.put("GlassMotor", 10-01-18-01-02-00-00L);
+        //Код мотор_редуктора стеклоподъемника
+        LoadCodes.put("GlassMotor", 10_01_18_01_02_00_00L);
         
         DetalCodes = (HashMap<String, Long>) LoadCodes.clone();
     }
