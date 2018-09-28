@@ -6,6 +6,7 @@
 package controller;
 
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.Scanner;
 import model.Body;
 import model.doors.Dictionaries;
@@ -25,7 +26,7 @@ public class Main {
     ShowModelParams SMP;
     Scanner in = new Scanner(System.in);
     
-    public Main(Body model, Menu view) {
+    public Main(Body model, Menu view, Properties prop) {
         this.model = model;
         this.view = view;
         this.SMP = new ShowModelParams(this.model);
