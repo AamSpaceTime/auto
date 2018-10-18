@@ -25,11 +25,13 @@ public class Main {
     Menu view;
     ShowModelParams SMP;
     Scanner in = new Scanner(System.in);
+    ErrMsgLog myerr;
     
-    public Main(Body model, Menu view, Properties prop) {
+    public Main(Body model, Menu view, Properties prop, ErrMsgLog myerr) {
         this.model = model;
         this.view = view;
         this.SMP = new ShowModelParams(this.model);
+        this.myerr = myerr;
     }
     
     
@@ -94,7 +96,7 @@ public class Main {
      * Главное меню
      * @return 
      */
-    public boolean swichMenu() {
+    public boolean swichMenu() throws Exception {
         boolean Result = true;
                 
         try {
@@ -125,7 +127,8 @@ public class Main {
             }
             
         } catch (NumberFormatException e) {
-            System.err.println("Введен неверный номер пункта меню");
+            throw myerr.makeErr(new Exception("Введен неверный номер пункта меню"));
+            //System.err.println("Введен неверный номер пункта меню");
             //Result = swichMenu();
         }
         catch (Exception e) {

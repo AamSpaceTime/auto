@@ -5,11 +5,11 @@
  */
 package auto;
 
+import controller.ErrMsgLog;
 import controller.Main;
+import java.io.IOException;
 import java.util.Properties;
-import java.util.Scanner;
 import model.Body;
-import model.doors.Dictionaries;
 import view.Menu;
 
 /**
@@ -22,12 +22,13 @@ public class Common {
     public static Main controller;
     public static Menu view;
     public static Properties prop;
+    public static ErrMsgLog myerr;
     
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {       
+    public static void main(String[] args) throws IOException {       
         /*
             0. Загружаем данные конфигурации
             1. Инициализируем модель
@@ -35,21 +36,23 @@ public class Common {
             3. Инициализируем контроллер и передаем туда модель и представление
             4. Запускаем бесконечный цикл в котором просматриваем результат меню на выход
         */
-        
+                    
         try {
+            myerr = new ErrMsgLog();
             prop = new Properties();
-            //Нужно не забыть сделать ресурсом, чтобы запускался из jar
-            Preloader PRL = new Preloader("src/auto/config.ini", prop); 
+            Preloader PRL = new Preloader("config.ini", prop); 
             model = new Body();
             view = new Menu();
-            controller = new Main(model, view, prop);
+            controller = new Main(model, view, prop, myerr);
             boolean run = true;        
 
             while(run) {            
                 run = controller.swichMenu();
             }
         } catch (Exception e) {
-            System.err.println("Ошибка - "+e.getMessage());
+           myerr.addErrWithLog(e); //Добавляем ошибку в список и пишем в лог без отображения в консоли
+           myerr.showErrText(e); //Отображаем ошибку
+           //System.err.println("Ошибка - "+e);
         }
     }
     
